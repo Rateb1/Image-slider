@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image-Slider With tail-wind CSS</title>
+    <style>
+      .img {
+        filter: grayscale(100%);
+      }
+      .img:hover {
+        filter: grayscale(0);
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-zinc-900 min-h-screen flex justify-center items-center relative"
+  >
+    <h1
+      class="top-[0] absolute text-center text-teal-300 text-3xl font-medium font-serif"
+    >
+      Hover The Image
+    </h1>
+
+    <div
+      class="group container flex w-1/2 bg-black absolute z-50 mx-auto right-24"
+    >
+      <div class="absolute -z-30 object-cover">
+        <img
+          class="img group-hover:translate-x-56 transition-all duration-1000 w-52 h-56"
+          src="1.jpg"
+          alt="img"
+        />
+      </div>
+
+      <div class="absolute z-30">
+        <img
+          class="img object-cover w-52 h-56 transition-all duration-1000"
+          src="2.jpg"
+          alt="img"
+        />
+      </div>
+
+      <div class="absolute object-cover -z-30">
+        <img
+          src="3.jpg"
+          class="img group-hover:-translate-x-56 transition-all duration-1000 w-52 h-56"
+          alt="img"
+        />
+      </div>
+    </div>
+  </body>
+</html>
